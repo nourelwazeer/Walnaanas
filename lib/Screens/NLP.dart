@@ -9,12 +9,15 @@ class GoalsScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.black12,
         body: Column(
-        children: [
+          children: [
 
-          TextFormField(
-        decoration: InputDecoration(
-        labelText: ' اتكلم',
-          border: OutlineInputBorder(),
+            TextFormField(
+                decoration: InputDecoration(
+                  labelText: ' اتكلم',
+                  border: OutlineInputBorder(),
 
-    ),
-    ]));
+                )),
+          ],
+        ));
+  }
+}
