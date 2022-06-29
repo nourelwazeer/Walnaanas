@@ -16,7 +16,7 @@ class LoginScreenn extends StatelessWidget {
             [
             Container(
             height: MediaQuery.of(context).size.height * 0.5,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(50),
             bottomRight: Radius.circular(50),
@@ -27,7 +27,7 @@ class LoginScreenn extends StatelessWidget {
       Column(
         children:
         [
-          SizedBox(height:20,),
+          const SizedBox(height:20,),
 
           Padding(
             padding: const EdgeInsets.all(50),
@@ -55,7 +55,7 @@ class LoginScreenn extends StatelessWidget {
               onChanged: (String value) {
                 print(value);
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'البريد الاكترونى ',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(
@@ -74,7 +74,7 @@ class LoginScreenn extends StatelessWidget {
               onChanged: (String value) {
                 print(value);
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'كلمة المرور' ,
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(
@@ -85,7 +85,7 @@ class LoginScreenn extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 70),
+            const SizedBox(height: 70),
 
       Padding(
       padding: const EdgeInsets.all(15),
@@ -99,7 +99,7 @@ class LoginScreenn extends StatelessWidget {
       ),
       onPressed:(){},
       color: Colors.teal,
-      child: Text(
+      child: const Text(
       ' تسجيل   ' ,
       style: TextStyle(
       fontSize: 30,
