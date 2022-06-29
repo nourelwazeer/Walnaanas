@@ -13,7 +13,7 @@ class FirstScreen extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             children: [
               Image(
-                image: AssetImage('assets/images/FirstScreen.gif'),
+                image: const AssetImage('assets/images/FirstScreen.gif'),
                 fit: BoxFit.cover,
                 height: size.height,
               ),
@@ -25,11 +25,11 @@ class FirstScreen extends StatelessWidget {
                       (
                       padding: const EdgeInsets.all(15),
                       child: ConstrainedBox(
-                        constraints: BoxConstraints.tightFor(width: 300, height: 50),
+                        constraints: const BoxConstraints.tightFor(width: 300, height: 50),
                         child: ElevatedButton(
                             onPressed: (){},
-                            child: Text('يلا نسجل',
-                              style: TextStyle
+                            child: const Text('يلا نسجل',
+                              style:  TextStyle
                                 (fontSize: 30,
                                 color: Colors.teal, fontWeight: FontWeight.w400,),
                             ),
@@ -46,13 +46,13 @@ class FirstScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 0.1,),
+                    const SizedBox(height: 0.1,),
                     Padding(padding: const EdgeInsets.all(15),
                       child: ConstrainedBox(
-                        constraints: BoxConstraints.tightFor(width: 300, height: 50),
+                        constraints: const BoxConstraints.tightFor(width: 300, height: 50),
                         child: ElevatedButton(
                           onPressed: (){},
-                          child: Text('سجلت قبل كدا',
+                          child: const Text('سجلت قبل كدا',
                             style: TextStyle
                               (fontSize: 30,
                               color: Colors.teal, fontWeight: FontWeight.w400,),
