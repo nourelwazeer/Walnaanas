@@ -1,75 +1,39 @@
-
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:walnaanas/domain/main_layout/main_state.dart';
 
-class HomeScreen extends StatefulWidget {
-  static const id = 'homescreen';
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
+import '../../domain/main_layout/main_cubit.dart';
 
-class _HomeScreenState extends State<HomeScreen> {
-  String str = 'Home Page';
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-        color : Colors.teal,
-        backgroundColor: Colors.white,
-        height: 50,
-          items: [
-            Icon(
-              Icons.home,
-              size: 30,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.speaker_notes_outlined,
-              size: 30,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.psychology_outlined,
-              size: 30,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.person,
-              size: 30,
-              color: Colors.white,
-            ),
-          ],
-          onTap: (index) {
-            if (index == 0) {
-              setState(() {
-                str = 'الصفحة الرئيسية';
-              });
-            } else if (index == 1) {
-              setState(() {
-                str = 'التشخيص';
-              });
-            } else if (index == 2) {
-              setState(() {
-                str = 'طبيبك';
-              });
-            } else {
-              setState(() {
-                str = 'حسابى';
-              });
-            }
-          },
-        animationDuration: Duration(
-          milliseconds: 200,
-        )),
-        body: Center(
-          child: Text(
-            str,
-            style: TextStyle(
-              fontSize: 50,
+    return BlocConsumer<MainCubit , MainState>(
+        builder: (context, state ) {
+          var cubit = MainCubit.get(context);
+          return Scaffold(
+            body: cubit.bottomNavModules[cubit.currentIndex],
+            bottomNavigationBar: CurvedNavigationBar(
+              items: const[
+                Icon(Icons.home, size: 30, color: Colors.white,),
+                Icon(Icons.speaker_notes_outlined, size: 30, color: Colors.white,),
+                Icon(Icons.psychology_outlined, size: 30, color: Colors.white,),
+                Icon(Icons.person, size: 30, color: Colors.white,),
+              ],
+              index: cubit.currentIndex,
+              backgroundColor: Colors.transparent,
               color: Colors.teal,
+              buttonBackgroundColor: Colors.teal,
+              height: 50,
+              animationDuration: const Duration(milliseconds: 300),
+              onTap: (index){
+                cubit.changeBottomNav(index);
+              },
             ),
-          ),
-        ),
-    );
+          );
+        } ,
+        listener: (context, state ){});
   }
 }

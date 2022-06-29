@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core:
   firebase_auth:
+  bloc: ^7.2.1
+  flutter_bloc: ^7.3.1
 
 
 dev_dependencies:
@@ -63,14 +65,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/Logo.png
-    - assets/images/Login.png
-    - assets/images/FirstScreen.gif
-    - assets/images/ErrorIM.png
-    - assets/images/PrivacyImage.png
-    - assets/images/Login2.png
-
-    -
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
