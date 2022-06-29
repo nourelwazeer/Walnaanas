@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:walnaanas/constants.dart';
 import 'package:walnaanas/domain/main_layout/main_cubit.dart';
@@ -29,7 +30,15 @@ class MyAPP extends StatelessWidget {
           BlocProvider(
               create: (context) => MainCubit()) ,
         ],
-        child: MaterialApp(
+        child: const MaterialApp(
+            localizationsDelegates: [
+              GlobalCupertinoLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: [
+              Locale("fa", "IR"), // OR Locale('ar', 'AE') OR Other RTL locales
+            ],
           debugShowCheckedModeBanner: false,
           // theme: ThemeData(
           //   appBarTheme: const AppBarTheme(
