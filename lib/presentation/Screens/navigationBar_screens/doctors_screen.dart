@@ -67,7 +67,7 @@ class DoctorsScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const [
                                 Text('دكتور اي حد',style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.bold,height: 1.3)),
-                                Text('27 May 2022',style: TextStyle(fontSize: 12,color: Colors.grey,height: 1.3))
+                                Text('27 june 2022',style: TextStyle(fontSize: 12,color: Colors.grey,height: 1.3))
                               ],
                             ),
                           ),
