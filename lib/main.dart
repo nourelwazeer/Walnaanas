@@ -39,7 +39,7 @@ class MyAPP extends StatelessWidget {
               GlobalWidgetsLocalizations.delegate,
             ],
             supportedLocales: [
-              Locale("fa", "IR"), // OR Locale('ar', 'AE') OR Other RTL locales
+              Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales
             ],
           debugShowCheckedModeBanner: false,
           // theme: ThemeData(
