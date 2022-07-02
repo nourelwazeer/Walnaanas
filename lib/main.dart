@@ -1,4 +1,5 @@
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -8,15 +9,16 @@ import 'package:walnaanas/domain/main_layout/main_cubit.dart';
 import 'package:walnaanas/presentation/Screens/FirstScreen.dart';
 import 'package:walnaanas/presentation/Screens/HomeScreen.dart';
 
+import 'bloc_observer.dart';
+import 'firebase_options.dart';
 
 
-
-
-
-
-
-void main()
-{
+void main() async{
+  Bloc.observer = MyBlocObserver();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyAPP());
 }
 
@@ -28,7 +30,7 @@ class MyAPP extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(
-              create: (context) => MainCubit()) ,
+              create: (context) => MainCubit()..getPosts()) ,
         ],
         child: const MaterialApp(
             localizationsDelegates: [
