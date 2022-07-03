@@ -7,7 +7,7 @@ class DiagnoseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('التشخيص'),
+        title: const Text('التشخيص'),
         backgroundColor: Colors.teal,
       ),
       body: Center(
@@ -16,8 +16,8 @@ class DiagnoseScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('ندخل في الموضوع ',textAlign: TextAlign.start,style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
-              SizedBox(height: 20,),
+              const Text('ندخل في الموضوع ',textAlign: TextAlign.start,style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
+              const SizedBox(height: 20,),
               Container(
                 height: 200,
                 width: double.infinity,
@@ -32,7 +32,7 @@ class DiagnoseScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     maxLines: 5,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'ابدأ اتكلم هنا ....',
                       floatingLabelBehavior: FloatingLabelBehavior.never,
                       border: InputBorder.none,
@@ -41,12 +41,12 @@ class DiagnoseScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 25,),
+              const SizedBox(height: 25,),
               ClipRRect(
                 borderRadius: BorderRadius.circular(30),
                 child: MaterialButton(
                   onPressed: (){},
-                  child: Text('خلصت',style: TextStyle(color: Colors.white),),
+                  child: const Text('خلصت',style: TextStyle(color: Colors.white),),
                   color: Colors.teal,
                 ),
               )

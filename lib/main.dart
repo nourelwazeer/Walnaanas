@@ -8,6 +8,7 @@ import 'package:walnaanas/constants.dart';
 import 'package:walnaanas/domain/main_layout/main_cubit.dart';
 import 'package:walnaanas/presentation/Screens/FirstScreen.dart';
 import 'package:walnaanas/presentation/Screens/HomeScreen.dart';
+import 'package:walnaanas/presentation/Screens/register/register_screen.dart';
 
 import 'bloc_observer.dart';
 import 'firebase_options.dart';
@@ -32,7 +33,7 @@ class MyAPP extends StatelessWidget {
           BlocProvider(
               create: (context) => MainCubit()..getPosts()) ,
         ],
-        child: const MaterialApp(
+        child:  MaterialApp(
             localizationsDelegates: [
               GlobalCupertinoLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
@@ -42,39 +43,7 @@ class MyAPP extends StatelessWidget {
               Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales
             ],
           debugShowCheckedModeBanner: false,
-          // theme: ThemeData(
-          //   appBarTheme: const AppBarTheme(
-          //     backgroundColor: KBackgroundColor,
-          //   ),
-          //   scaffoldBackgroundColor: KBackgroundColor,
-          //   primaryColor: Colors.white,
-          //   accentColor: KAccentColor,
-          //   iconTheme: const IconThemeData(
-          //       color: Colors.black),
-          //   fontFamily: GoogleFonts
-          //       .montserrat()
-          //       .fontFamily,
-          //   textTheme: GoogleFonts.montserratTextTheme(),
-          //   inputDecorationTheme: InputDecorationTheme(
-          //     filled: true,
-          //     fillColor: const Color(0xFFF2F0E4),
-          //     enabledBorder: OutlineInputBorder(
-          //       borderSide: const BorderSide(color: Colors.white70),
-          //       borderRadius: BorderRadius.circular(25),
-          //     ),
-          //     disabledBorder: OutlineInputBorder(
-          //       borderSide: const BorderSide(color: Colors.white70),
-          //       borderRadius: BorderRadius.circular(25),
-          //     ),
-          //     focusedBorder: OutlineInputBorder(
-          //       borderSide: const BorderSide(color: Colors.white70),
-          //       borderRadius: BorderRadius.circular(25),
-          //     ),
-          //   ),
-          //
-          //
-          // ),
-          home :HomeScreen(),
+          home :RegisterScreen(),
 
 
         ));

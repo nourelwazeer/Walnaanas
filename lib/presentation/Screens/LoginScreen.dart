@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../Widgets/LoginForm.dart';
-
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
   @override
@@ -46,7 +44,6 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 children:
                 [
-                  LoginForm(),
                 ],
               ),
             ),
