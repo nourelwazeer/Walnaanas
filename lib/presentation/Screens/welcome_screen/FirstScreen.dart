@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:walnaanas/presentation/Screens/login_screen/login_screen.dart';
+import 'package:walnaanas/presentation/Screens/register/register_screen.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+
      Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Container(
           color: Colors.white,
@@ -28,7 +32,9 @@ class FirstScreen extends StatelessWidget {
                       child: ConstrainedBox(
                         constraints: const BoxConstraints.tightFor(width: 300, height: 50),
                         child: ElevatedButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => RegisterScreen()), (route) => false);
+                            },
                             child: const Text('يلا نسجل',
                               style:  TextStyle
                                 (fontSize: 30,
@@ -52,7 +58,9 @@ class FirstScreen extends StatelessWidget {
                       child: ConstrainedBox(
                         constraints: const BoxConstraints.tightFor(width: 300, height: 50),
                         child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => LoginScreen()), (route) => false);
+                          },
                           child: const Text('سجلت قبل كدا',
                             style: TextStyle
                               (fontSize: 30,

@@ -1,15 +1,11 @@
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:walnaanas/constants.dart';
+import 'package:walnaanas/data/local/cash_helper.dart';
 import 'package:walnaanas/domain/main_layout/main_cubit.dart';
-import 'package:walnaanas/presentation/Screens/FirstScreen.dart';
-import 'package:walnaanas/presentation/Screens/HomeScreen.dart';
-import 'package:walnaanas/presentation/Screens/register/register_screen.dart';
-
+import 'package:walnaanas/presentation/Screens/login_screen/login_screen.dart';
+import 'package:walnaanas/presentation/Screens/welcome_screen/FirstScreen.dart';
 import 'bloc_observer.dart';
 import 'firebase_options.dart';
 
@@ -20,14 +16,23 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyAPP());
+  await CashHelper.init();
+  runApp( MyAPP());
 }
 
 class MyAPP extends StatelessWidget {
-  const MyAPP({Key? key}) : super(key: key);
+   MyAPP({Key? key}) : super(key: key);
+
+  var userId = CashHelper.getData(key: 'uId');
+  Widget? startScreen;
 
   @override
   Widget build(BuildContext context) {
+    if(userId != null){
+      startScreen = LoginScreen();
+    }else{
+      startScreen = FirstScreen();
+    }
     return MultiBlocProvider(
         providers: [
           BlocProvider(
@@ -43,7 +48,7 @@ class MyAPP extends StatelessWidget {
               Locale("ar", "AE"), // OR Locale('ar', 'AE') OR Other RTL locales
             ],
           debugShowCheckedModeBanner: false,
-          home :RegisterScreen(),
+          home :startScreen,
 
 
         ));
